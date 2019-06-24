@@ -54,7 +54,7 @@ EOF
 # Run the tests
 dos2unix ./run-tests.pl
 TEST_STATUS=0
-./run-tests.pl -I Dendrite::Monolith -d /src/bin -W /src/testfile -O tap --all "$@" > results.tap 2>&1 || TEST_STATUS=$?
+./run-tests.pl -I Dendrite::Monolith -d /src/bin -W /src/testfile -O tap --all "$@" | tee results.tap || TEST_STATUS=$?
 
 # Check for new tests to be added to testfile
 /src/show-expected-fail-tests.sh results.tap /src/testfile || TEST_STATUS=$?
