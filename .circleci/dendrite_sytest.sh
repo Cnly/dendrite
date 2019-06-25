@@ -28,7 +28,7 @@ else
 
 fi
 
-mv /src/.circleci/ProcessManager.pm /src/lib/SyTest/Homeserver/ProcessManager.pm
+# mv /src/.circleci/ProcessManager.pm /src/lib/SyTest/Homeserver/ProcessManager.pm
 
 # Make sure all Perl deps are installed -- this is done in the docker build so will only install packages added since the last Docker build
 dos2unix ./install-deps.pl
